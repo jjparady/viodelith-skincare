@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop — Viodelith Skincare</title>
+  <meta name="description" content="Shop Viodelith Skincare — barrier-first Korean cleansers, essences, serums, and sun care." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26' font-family='serif'>V</text></svg>" />
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Primary">
+      <button class="nav__toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      <ul class="nav__links">
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="index.html#ritual">Ritual</a></li>
+        <li><a href="about.html">Our Story</a></li>
+      </ul>
+      <a class="brand" href="index.html">Viodelith<small>Korean Skincare</small></a>
+      <ul class="nav__links nav__links--right">
+        <li><a href="index.html#journal">Journal</a></li>
+        <li><a href="shop.html">Bag<span class="cart-count" data-cart-count style="display:none">0</span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="mobile-menu">
+    <ul>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="index.html#ritual">Ritual</a></li>
+      <li><a href="about.html">Our Story</a></li>
+      <li><a href="index.html#journal">Journal</a></li>
+    </ul>
+  </div>
+
+  <main>
+    <section class="page-hero">
+      <div class="wrap">
+        <span class="eyebrow">The Full Edit</span>
+        <h1>Shop the Ritual</h1>
+        <p>Every formula is barrier-first, gently active, and made to be kept. Filter by step to build your routine.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="filters" id="filters"></div>
+        <div class="grid-products" id="shop-grid"></div>
+      </div>
+    </section>
+
+    <section class="section band">
+      <div class="wrap newsletter">
+        <span class="eyebrow" style="color:var(--stone)">Not sure where to start?</span>
+        <h2 style="color:var(--paper); margin-top:1rem;">Build your ritual with us.</h2>
+        <p style="color:#d8d1c4;">Tell us your skin type and we'll compose a routine — barrier-first, always.</p>
+        <a href="about.html" class="btn btn--ghost" style="border-color:var(--stone); color:var(--paper); margin-top:1rem;">Take the skin quiz</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a class="brand" href="index.html" style="text-align:left;">Viodelith<small>Korean Skincare</small></a>
+          <p>Considered Korean skincare for a calm, luminous complexion. Formulated gently, made to be kept.</p>
+        </div>
+        <div class="footer__col"><h4>Shop</h4><ul><li><a href="shop.html">All Products</a></li><li><a href="shop.html">Cleansers</a></li><li><a href="shop.html">Serums</a></li><li><a href="shop.html">Sun Care</a></li></ul></div>
+        <div class="footer__col"><h4>House</h4><ul><li><a href="about.html">Our Story</a></li><li><a href="index.html#ritual">The Ritual</a></li><li><a href="index.html#journal">Journal</a></li><li><a href="#">Ingredients</a></li></ul></div>
+        <div class="footer__col"><h4>Care</h4><ul><li><a href="#">Contact</a></li><li><a href="#">Shipping</a></li><li><a href="#">Returns</a></li><li><a href="#">FAQ</a></li></ul></div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span id="year">2026</span> Viodelith Skincare. All rights reserved.</span>
+        <span>Seoul · London · Worldwide shipping</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

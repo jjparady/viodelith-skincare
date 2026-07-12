@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Viodelith Skincare — Considered Korean Skincare</title>
+  <meta name="description" content="Viodelith Skincare — a curated house of considered Korean skincare. Barrier-first rituals, clean formulations, quiet luxury." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26' font-family='serif'>V</text></svg>" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Primary">
+      <button class="nav__toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      <ul class="nav__links">
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="index.html#ritual">Ritual</a></li>
+        <li><a href="about.html">Our Story</a></li>
+      </ul>
+      <a class="brand" href="index.html">Viodelith<small>Korean Skincare</small></a>
+      <ul class="nav__links nav__links--right">
+        <li><a href="index.html#journal">Journal</a></li>
+        <li><a href="shop.html">Bag<span class="cart-count" data-cart-count style="display:none">0</span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu">
+    <ul>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="index.html#ritual">Ritual</a></li>
+      <li><a href="about.html">Our Story</a></li>
+      <li><a href="index.html#journal">Journal</a></li>
+      <li><a href="shop.html">Bag</a></li>
+    </ul>
+  </div>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero__inner wrap">
+        <div class="hero__copy">
+          <span class="eyebrow">Seoul · Considered Skincare</span>
+          <h1 class="hero__title">Skin, kept<br /><em>quietly</em> luminous.</h1>
+          <p class="hero__lede">A curated house of Korean skincare built barrier-first — gentle actives, clean formulations, and rituals that let your skin do the glowing.</p>
+          <div class="hero__actions">
+            <a href="shop.html" class="btn">Shop the Edit</a>
+            <a href="index.html#ritual" class="link-underline">Discover the Ritual</a>
+          </div>
+        </div>
+        <div class="hero__art" data-bottle="amber"></div>
+      </div>
+      <div class="hero__scroll">Scroll</div>
+    </section>
+
+    <!-- Ticker -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track">
+        <span>Snail Mucin</span><span>Centella Asiatica</span><span>Fermented Rice</span><span>Propolis</span><span>Ginseng</span><span>Ceramides</span>
+        <span>Snail Mucin</span><span>Centella Asiatica</span><span>Fermented Rice</span><span>Propolis</span><span>Ginseng</span><span>Ceramides</span>
+      </div>
+    </div>
+
+    <!-- Featured products -->
+    <section class="section" id="shop">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <div>
+            <span class="eyebrow">The Edit</span>
+            <h2>Quietly effective<br />everyday essentials.</h2>
+          </div>
+          <a href="shop.html" class="link-underline">View all products</a>
+        </div>
+        <div class="grid-products" id="featured-grid"></div>
+      </div>
+    </section>
+
+    <!-- Editorial split — barrier first -->
+    <section class="section section--tight">
+      <div class="wrap split">
+        <div class="split__media reveal" data-leaf></div>
+        <div class="split__copy reveal">
+          <span class="eyebrow">Our Philosophy</span>
+          <h2>Barrier-first, always.</h2>
+          <p>Great skin isn't forced — it's supported. Every Viodelith formula begins with the moisture barrier: the quiet layer that keeps skin calm, resilient, and glowing without irritation.</p>
+          <p>We pair time-honoured Korean botanicals with modern, gentle actives — no harsh strips, no noise. Just skin that feels like itself again.</p>
+          <a href="about.html" class="btn btn--ghost">Read our story</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ritual steps -->
+    <section class="section" id="ritual" style="background:var(--white); border-block:1px solid var(--line);">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <div>
+            <span class="eyebrow">The Ritual</span>
+            <h2>Four steps to glass skin.</h2>
+          </div>
+        </div>
+        <div class="steps">
+          <div class="step reveal"><div class="step__num">01</div><h3>Cleanse</h3><p>A low-pH milk cleanser lifts the day without disturbing the barrier.</p></div>
+          <div class="step reveal"><div class="step__num">02</div><h3>Tone</h3><p>Fermented essence-toners prep skin to drink in everything that follows.</p></div>
+          <div class="step reveal"><div class="step__num">03</div><h3>Treat</h3><p>Targeted serums and essences bring hydration, clarity, and glow.</p></div>
+          <div class="step reveal"><div class="step__num">04</div><h3>Seal</h3><p>Cica creams and SPF lock it in and defend through the day.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values band -->
+    <section class="section band">
+      <div class="wrap">
+        <div class="section__head reveal" style="margin-bottom:2.6rem;">
+          <div><span class="eyebrow" style="color:var(--stone)">Why Viodelith</span></div>
+        </div>
+        <div class="values">
+          <div class="value reveal"><span class="mark">✧</span><h3>Clean by design</h3><p>Free from parabens, sulphates, and synthetic fragrance. Formulated for even the most reactive skin.</p></div>
+          <div class="value reveal"><span class="mark">✧</span><h3>Sourced in Korea</h3><p>Made with heritage botanicals and produced with the labs that pioneered modern K-beauty.</p></div>
+          <div class="value reveal"><span class="mark">✧</span><h3>Cruelty-free</h3><p>Never tested on animals. Recyclable glass and refill-ready design across the range.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Journal teaser -->
+    <section class="section" id="journal">
+      <div class="wrap split split--reverse">
+        <div class="split__media reveal" data-leaf style="background:linear-gradient(150deg,var(--paper-2),var(--sand));"></div>
+        <div class="split__copy reveal">
+          <span class="eyebrow">The Journal</span>
+          <h2>Glass skin, decoded.</h2>
+          <p>From the ten-step ritual to the science of the skin barrier, our journal translates K-beauty into a practice you'll actually keep.</p>
+          <p>Learn how to layer, when to exfoliate, and why less is so often more.</p>
+          <a href="#" class="link-underline">Read the Journal</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="section band">
+      <div class="wrap newsletter">
+        <span class="eyebrow reveal" style="color:var(--stone)">Join the House</span>
+        <h2 class="reveal" style="color:var(--paper); margin-top:1rem;">Ten percent off your first ritual.</h2>
+        <p class="reveal" style="color:#d8d1c4;">Subscribe for early access to new arrivals, quiet restocks, and skincare notes from Seoul.</p>
+        <form class="newsletter__form reveal" style="border-color:var(--stone);">
+          <input type="email" placeholder="Your email address" aria-label="Email address" required style="color:var(--paper);" />
+          <button type="submit" style="color:var(--paper);">Subscribe</button>
+        </form>
+        <p class="newsletter__note reveal" style="color:var(--clay);">No noise. Unsubscribe anytime.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a class="brand" href="index.html" style="text-align:left;">Viodelith<small>Korean Skincare</small></a>
+          <p>Considered Korean skincare for a calm, luminous complexion. Formulated gently, made to be kept.</p>
+        </div>
+        <div class="footer__col"><h4>Shop</h4><ul><li><a href="shop.html">All Products</a></li><li><a href="shop.html">Cleansers</a></li><li><a href="shop.html">Serums</a></li><li><a href="shop.html">Sun Care</a></li></ul></div>
+        <div class="footer__col"><h4>House</h4><ul><li><a href="about.html">Our Story</a></li><li><a href="index.html#ritual">The Ritual</a></li><li><a href="index.html#journal">Journal</a></li><li><a href="#">Ingredients</a></li></ul></div>
+        <div class="footer__col"><h4>Care</h4><ul><li><a href="#">Contact</a></li><li><a href="#">Shipping</a></li><li><a href="#">Returns</a></li><li><a href="#">FAQ</a></li></ul></div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span id="year">2026</span> Viodelith Skincare. All rights reserved.</span>
+        <span>Seoul · London · Worldwide shipping</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
