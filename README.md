@@ -16,8 +16,24 @@ index.html    Home — hero, featured edit, philosophy, ritual, values, journal,
 shop.html     Shop — filterable product grid
 about.html    Our Story — brand narrative + promise
 styles.css    All styles (single stylesheet, CSS custom properties)
-script.js     Product catalogue, cart (localStorage), filters, reveals, mobile menu
+config.js     Store configuration — the one file you edit to go live (see below)
+commerce.js   Commerce adapter — mock + Shopify providers behind one API
+script.js     UI — product rendering, cart drawer, filters, reveals, mobile menu
 ```
+
+## Commerce
+
+The storefront talks to the store only through `window.Commerce` (in
+`commerce.js`), which has two interchangeable providers selected in `config.js`:
+
+- **`mock`** (default) — a built-in demo catalogue with a `localStorage` cart and
+  a demo checkout. The site behaves like a real shop but takes no payments.
+- **`shopify`** — the full Shopify Storefront API implementation (products, cart,
+  hosted checkout). Built and ready, dormant until configured.
+
+Going live is a config change, not a rebuild: create the Shopify store, paste the
+domain + Storefront API token into `config.js`, flip `provider` to `"shopify"`,
+and push. **See [`SHOPIFY_SETUP.md`](SHOPIFY_SETUP.md) for the full checklist.**
 
 ## Running
 
@@ -30,7 +46,9 @@ python3 -m http.server 8000
 
 ## Notes
 
-- Product imagery uses inline SVG bottle illustrations, so the site works fully offline
-  (fonts load from Google Fonts when online, with graceful system fallbacks).
-- The bag uses `localStorage` as a lightweight demo — no backend yet.
-- This is an early showcase build; styling and functionality will be refined.
+- Demo product imagery uses inline SVG bottle illustrations, so the site works fully
+  offline (fonts load from Google Fonts when online, with graceful system fallbacks).
+  Once on Shopify, real product photos are used automatically.
+- In demo mode the bag uses `localStorage`; on Shopify it uses a real Storefront cart.
+- Bilingual (EN/ES) support and USD/HNL currency for the US + Honduras markets are the
+  next planned phase (see `SHOPIFY_SETUP.md`).
