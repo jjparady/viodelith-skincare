@@ -1,5 +1,6 @@
 # =========================================================
-# Viodelith Studio — Decap CMS configuration
+# Viodelith Studio — Sveltia CMS configuration
+# (Sveltia reads the Decap/Netlify CMS config format.)
 # ---------------------------------------------------------
 # Edits made in the Studio are saved as commits to this repo,
 # which redeploys the site automatically.

@@ -6,7 +6,7 @@ phone, no code. It lives at:
 
 ### `…/admin/` — e.g. https://jjparady.github.io/viodelith-skincare/admin/
 
-It's built on **Decap CMS**, a git-based editor: when she taps **Publish**, the
+It's built on **Sveltia CMS**, a mobile-friendly git-based editor: when she taps **Publish**, the
 change is saved as a commit to this repo and the live site updates itself in a
 minute or two. There's no separate database or server to run.
 
@@ -30,8 +30,8 @@ GitHub → your **Settings → Developer settings → OAuth Apps → New OAuth A
 Save it, then note the **Client ID** and generate a **Client secret**.
 
 ### 3. Deploy a small OAuth relay (free)
-Decap needs a tiny helper to complete GitHub login on a static host. The
-community **`sveltia-cms-auth`** Cloudflare Worker works with Decap and is free:
+Sveltia needs a tiny helper to complete GitHub login on a static host. The
+**`sveltia-cms-auth`** Cloudflare Worker (same author as Sveltia CMS) is free:
 
 1. Create a free [Cloudflare](https://dash.cloudflare.com) account.
 2. Deploy the `sveltia-cms-auth` worker (its README has a one-click/`wrangler`

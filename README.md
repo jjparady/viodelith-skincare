@@ -24,7 +24,7 @@ i18n.js       Localization — EN/ES dictionary, USD/HNL currency (window.L10n)
 journal.js    Journal — bilingual article data + list/article rendering
 script.js     UI — product rendering, cart drawer, filters, reveals, mobile menu
 data/         Editable content — products.json, articles.json (managed via the Studio)
-admin/        Viodelith Studio — Decap CMS (index.html + config.yml)
+admin/        Viodelith Studio — Sveltia CMS (index.html + config.yml)
 scripts/      translate.mjs — English→Spanish auto-translation (DeepL)
 uploads/      Photos uploaded from the Studio
 ```
