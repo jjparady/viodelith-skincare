@@ -52,10 +52,42 @@
 
   const MOCK_CART_KEY = "viodelith_cart";
 
+  // Map an entry from data/products.json into the normalized product shape.
+  function fromJSON(r) {
+    const qty = (typeof r.quantity === "number") ? r.quantity : 0;
+    return {
+      id: r.id, handle: r.handle || r.id, title: r.title_en || r.title || "",
+      category: r.category || "Skincare", price: Number(r.price) || 0, currencyCode: CURRENCY,
+      tag: r.tag || null, tone: r.tone || "cream", image: r.image || null,
+      description: r.description_en || r.description || "",
+      i18n: { es: { title: r.title_es || "", description: r.description_es || "" } },
+      quantity: qty, available: qty > 0, variantId: r.id,
+    };
+  }
+
+  let _catalogue = null; // cached promise
+  async function loadCatalogue() {
+    if (_catalogue) return _catalogue;
+    _catalogue = (async () => {
+      try {
+        const res = await fetch("data/products.json", { cache: "no-store" });
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        const json = await res.json();
+        const list = (json.products || []).map(fromJSON);
+        if (!list.length) throw new Error("empty catalogue");
+        return list;
+      } catch (e) {
+        console.warn("Falling back to built-in catalogue:", e.message);
+        return MOCK_PRODUCTS.map(p => ({ ...p }));
+      }
+    })();
+    return _catalogue;
+  }
+
   const MockProvider = {
-    async init() {},
-    async getProducts() { return MOCK_PRODUCTS.map(p => ({ ...p })); },
-    async getProduct(id) { const p = MOCK_PRODUCTS.find(x => x.id === id); return p ? { ...p } : null; },
+    async init() { await loadCatalogue(); },
+    async getProducts() { return (await loadCatalogue()).map(p => ({ ...p })); },
+    async getProduct(id) { const p = (await loadCatalogue()).find(x => x.id === id || x.handle === id); return p ? { ...p } : null; },
 
     _read() { try { return JSON.parse(localStorage.getItem(MOCK_CART_KEY)) || {}; } catch { return {}; } },
     _write(c) { localStorage.setItem(MOCK_CART_KEY, JSON.stringify(c)); },
@@ -70,8 +102,9 @@
 
     async getCart() {
       const c = this._read();
+      const catalogue = await loadCatalogue();
       const lines = Object.entries(c).map(([id, qty]) => {
-        const p = MOCK_PRODUCTS.find(x => x.id === id);
+        const p = catalogue.find(x => x.id === id);
         if (!p) return null;
         return { key: id, id, title: p.title, price: p.price, qty, lineTotal: p.price * qty,
                  image: p.image, tone: p.tone, variantId: p.variantId };

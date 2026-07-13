@@ -1,0 +1,83 @@
+# =========================================================
+# Viodelith Studio — Decap CMS configuration
+# ---------------------------------------------------------
+# Edits made in the Studio are saved as commits to this repo,
+# which redeploys the site automatically.
+#
+# BEFORE FIRST USE: set `base_url` below to your deployed
+# GitHub OAuth relay (see STUDIO_SETUP.md — ~10 min, one time),
+# and confirm `branch` matches the branch the site deploys from.
+# =========================================================
+
+backend:
+  name: github
+  repo: jjparady/viodelith-skincare
+  branch: claude/viodelith-skincare-site-6s23zn
+  # URL of your OAuth relay (Cloudflare Worker). Replace the placeholder:
+  base_url: https://REPLACE-WITH-YOUR-OAUTH-RELAY.workers.dev
+
+# Uploaded photos are committed here and referenced with a relative path,
+# so they work under the GitHub Pages project subpath.
+media_folder: "uploads"
+public_folder: "uploads"
+
+locale: "en"
+site_url: https://jjparady.github.io/viodelith-skincare/
+
+collections:
+  # ---------------- Products ----------------
+  - name: "products"
+    label: "Products"
+    delete: false
+    files:
+      - name: "catalogue"
+        label: "Product catalogue"
+        file: "data/products.json"
+        description: "Add products, set prices, quantities and photos. Leave Spanish blank to auto-translate."
+        fields:
+          - name: "products"
+            label: "Products"
+            label_singular: "Product"
+            widget: "list"
+            summary: "{{fields.title_en}} — ${{fields.price}} · {{fields.quantity}} in stock"
+            fields:
+              - { name: "id", label: "ID (unique, no spaces)", widget: "string", hint: "e.g. cica-cream" }
+              - { name: "handle", label: "URL handle", widget: "string", required: false, hint: "e.g. cica-barrier-cream" }
+              - { name: "title_en", label: "Name (English)", widget: "string" }
+              - { name: "title_es", label: "Name (Spanish)", widget: "string", required: false, hint: "Leave blank to auto-translate" }
+              - { name: "category", label: "Category", widget: "select", options: ["Cleanser", "Toner", "Essence", "Serum", "Moisturiser", "Mask", "Sun"] }
+              - { name: "price", label: "Price (USD)", widget: "number", value_type: "float", min: 0 }
+              - { name: "quantity", label: "Quantity in stock", widget: "number", value_type: "int", min: 0, default: 0, hint: "0 shows the product as Sold out" }
+              - { name: "tag", label: "Badge", widget: "select", required: false, default: "", options: [{ label: "None", value: "" }, { label: "Bestseller", value: "Bestseller" }, { label: "New", value: "New" }] }
+              - { name: "image", label: "Photo", widget: "image", required: false, hint: "Optional — a tinted illustration is used if empty" }
+              - { name: "tone", label: "Illustration tint (if no photo)", widget: "select", default: "cream", options: ["amber", "cream", "rose", "sage"] }
+              - { name: "description_en", label: "Description (English)", widget: "text" }
+              - { name: "description_es", label: "Description (Spanish)", widget: "text", required: false, hint: "Leave blank to auto-translate" }
+
+  # ---------------- Journal ----------------
+  - name: "journal"
+    label: "Journal"
+    delete: false
+    files:
+      - name: "articles"
+        label: "Articles"
+        file: "data/articles.json"
+        description: "Write journal articles. Leave Spanish fields blank to auto-translate."
+        fields:
+          - name: "articles"
+            label: "Articles"
+            label_singular: "Article"
+            widget: "list"
+            summary: "{{fields.title_en}} ({{fields.date}})"
+            fields:
+              - { name: "slug", label: "URL slug (unique, no spaces)", widget: "string", hint: "e.g. glass-skin-decoded" }
+              - { name: "date", label: "Date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
+              - { name: "readMins", label: "Read time (minutes)", widget: "number", value_type: "int", min: 1, default: 4 }
+              - { name: "tone", label: "Cover tint", widget: "select", default: "cream", options: ["amber", "cream", "rose", "sage"] }
+              - { name: "image", label: "Cover photo", widget: "image", required: false }
+              - { name: "title_en", label: "Title (English)", widget: "string" }
+              - { name: "title_es", label: "Title (Spanish)", widget: "string", required: false, hint: "Leave blank to auto-translate" }
+              - { name: "excerpt_en", label: "Excerpt (English)", widget: "text" }
+              - { name: "excerpt_es", label: "Excerpt (Spanish)", widget: "text", required: false, hint: "Leave blank to auto-translate" }
+              - { name: "body_en", label: "Article (English)", widget: "markdown" }
+              - { name: "body_es", label: "Article (Spanish)", widget: "markdown", required: false, hint: "Leave blank to auto-translate" }

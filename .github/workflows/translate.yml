@@ -1,0 +1,43 @@
+name: Auto-translate content
+
+# When products or articles change, fill any empty Spanish fields from the
+# English ones via DeepL, then commit the result. Pushes made with the
+# built-in GITHUB_TOKEN do not retrigger workflows, so this can't loop.
+
+on:
+  push:
+    branches:
+      - claude/viodelith-skincare-site-6s23zn
+    paths:
+      - "data/products.json"
+      - "data/articles.json"
+
+permissions:
+  contents: write
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Fill missing Spanish
+        env:
+          DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
+        run: node scripts/translate.mjs
+
+      - name: Commit translations
+        run: |
+          if [[ -n "$(git status --porcelain data)" ]]; then
+            git config user.name "Viodelith Bot"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data
+            git commit -m "chore: auto-translate to Spanish [skip ci]"
+            git push
+          else
+            echo "No translations needed."
+          fi

@@ -23,7 +23,22 @@ commerce.js   Commerce adapter — mock + Shopify providers behind one API
 i18n.js       Localization — EN/ES dictionary, USD/HNL currency (window.L10n)
 journal.js    Journal — bilingual article data + list/article rendering
 script.js     UI — product rendering, cart drawer, filters, reveals, mobile menu
+data/         Editable content — products.json, articles.json (managed via the Studio)
+admin/        Viodelith Studio — Decap CMS (index.html + config.yml)
+scripts/      translate.mjs — English→Spanish auto-translation (DeepL)
+uploads/      Photos uploaded from the Studio
 ```
+
+## Editing content (the Studio)
+
+Products and journal articles are data in `data/*.json`, editable without code
+through **Viodelith Studio** — a mobile-friendly, git-based CMS at `/admin/`.
+Publishing commits to the repo and the site redeploys. English content is
+auto-translated to Spanish by a GitHub Action (`scripts/translate.mjs`) on
+publish. **Setup and day-to-day use: [`STUDIO_SETUP.md`](STUDIO_SETUP.md).**
+
+The site reads the JSON directly and falls back to a built-in copy if a file
+can't be loaded, so a bad edit never takes the storefront down.
 
 ## Journal
 
