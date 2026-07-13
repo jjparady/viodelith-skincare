@@ -13,8 +13,8 @@ backend:
   name: github
   repo: jjparady/viodelith-skincare
   branch: claude/viodelith-skincare-site-6s23zn
-  # URL of your OAuth relay (Cloudflare Worker). Replace the placeholder:
-  base_url: https://REPLACE-WITH-YOUR-OAUTH-RELAY.workers.dev
+  # URL of your OAuth relay (Cloudflare Worker):
+  base_url: https://sveltia-cms-auth-viodelith.jjparady.workers.dev
 
 # Uploaded photos are committed here and referenced with a relative path,
 # so they work under the GitHub Pages project subpath.
