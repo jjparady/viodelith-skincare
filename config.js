@@ -28,13 +28,19 @@ window.VIODELITH_CONFIG = {
     productsToLoad: 60,
   },
 
-  // Presentation only. Settlement currency is set in Shopify (USD for a US
-  // business). When Shopify Markets is enabled it supplies real localized
-  // prices; until then this drives the demo catalogue's formatting.
+  // Presentation only. Settlement currency is USD (a US business charges in
+  // USD). HNL is shown as a convenience, converted at the indicative rate
+  // below; the UI flags it as indicative. When Shopify Markets is enabled it
+  // supplies real localized prices and these rates are no longer used.
   currency: {
     default: "USD",
     symbols: { USD: "$", HNL: "L" },
+    // Indicative USD -> currency rates for demo display only.
+    rates: { USD: 1, HNL: 26 },
   },
+
+  // Default interface language ("en" | "es"). A visitor's choice overrides this.
+  defaultLang: "en",
 
   // Where orders ship. Used for copy and, later, Shopify shipping zones.
   markets: ["US", "HN"],

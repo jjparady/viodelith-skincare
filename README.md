@@ -18,8 +18,21 @@ about.html    Our Story — brand narrative + promise
 styles.css    All styles (single stylesheet, CSS custom properties)
 config.js     Store configuration — the one file you edit to go live (see below)
 commerce.js   Commerce adapter — mock + Shopify providers behind one API
+i18n.js       Localization — EN/ES dictionary, USD/HNL currency (window.L10n)
 script.js     UI — product rendering, cart drawer, filters, reveals, mobile menu
 ```
+
+## Language & currency
+
+The site is bilingual (English / Spanish) with a USD / HNL price display, toggled
+from the utility bar and remembered per visitor. All of it runs through
+`window.L10n` (`i18n.js`):
+
+- **Copy** carries `data-i18n` attributes filled from one dictionary; product names
+  and descriptions are localized from the catalogue.
+- **Currency** converts from the USD base at an indicative rate for display only —
+  a US business settles in USD, and the cart says so when HNL is selected. Real
+  localized pricing comes from Shopify Markets once the store is live.
 
 ## Commerce
 
@@ -50,5 +63,6 @@ python3 -m http.server 8000
   offline (fonts load from Google Fonts when online, with graceful system fallbacks).
   Once on Shopify, real product photos are used automatically.
 - In demo mode the bag uses `localStorage`; on Shopify it uses a real Storefront cart.
-- Bilingual (EN/ES) support and USD/HNL currency for the US + Honduras markets are the
-  next planned phase (see `SHOPIFY_SETUP.md`).
+- Bilingual EN/ES and USD/HNL display are built in (`i18n.js`). When Shopify goes
+  live, pair it with Shopify's *Translate & Adapt* and *Markets* for server-side
+  translations and real localized pricing (see `SHOPIFY_SETUP.md`).

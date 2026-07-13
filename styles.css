@@ -118,6 +118,23 @@ h1, h2, h3, h4 {
 .link-underline:hover::after { transform: scaleX(1); transform-origin: left; }
 
 /* =========================================================
+   Utility bar (shipping note + language/currency toggles)
+   ========================================================= */
+.utilbar { background: var(--ink); color: var(--paper); }
+.utilbar__inner { display: flex; align-items: center; justify-content: space-between; min-height: 36px; gap: 1rem; }
+.utilbar__note { font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase; color: #cfc7b8; }
+.utilbar__controls { display: flex; gap: 1rem; align-items: center; }
+.seg { display: inline-flex; border: 1px solid rgba(246,243,238,.26); }
+.seg button {
+  background: transparent; border: 0; color: #cfc7b8;
+  font-family: var(--sans); font-size: 0.64rem; letter-spacing: 0.14em; text-transform: uppercase;
+  padding: .4em .85em; cursor: pointer; transition: background .3s var(--ease), color .3s var(--ease);
+}
+.seg button + button { border-left: 1px solid rgba(246,243,238,.26); }
+.seg button:hover { color: var(--paper); }
+.seg button.is-active { background: var(--paper); color: var(--ink); }
+
+/* =========================================================
    Header
    ========================================================= */
 .site-header {
@@ -628,6 +645,11 @@ h1, h2, h3, h4 {
   .footer__grid { grid-template-columns: 1fr 1fr; }
   .footer__brand { grid-column: 1 / -1; }
   .stat-row { grid-template-columns: 1fr; gap: 2.4rem; }
+}
+@media (max-width: 620px) {
+  .utilbar__note { display: none; }
+  .utilbar__inner { justify-content: center; }
+  .utilbar__controls { gap: .8rem; }
 }
 @media (max-width: 460px) {
   .grid-products { grid-template-columns: 1fr; }

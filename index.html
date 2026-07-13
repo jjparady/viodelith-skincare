@@ -13,19 +13,36 @@
 </head>
 <body>
 
+  <!-- Utility bar -->
+  <div class="utilbar">
+    <div class="wrap utilbar__inner">
+      <span class="utilbar__note" data-i18n="util.ships">Ships to the U.S. &amp; Honduras</span>
+      <div class="utilbar__controls">
+        <div class="seg" role="group" aria-label="Language" data-i18n-aria="util.language">
+          <button type="button" data-set-lang="en">EN</button>
+          <button type="button" data-set-lang="es">ES</button>
+        </div>
+        <div class="seg" role="group" aria-label="Currency" data-i18n-aria="util.currency">
+          <button type="button" data-set-currency="USD">$ USD</button>
+          <button type="button" data-set-currency="HNL">L HNL</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Header -->
   <header class="site-header">
     <nav class="nav wrap" aria-label="Primary">
-      <button class="nav__toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      <button class="nav__toggle" aria-label="Menu" data-i18n-aria="menu"><span></span><span></span><span></span></button>
       <ul class="nav__links">
-        <li><a href="shop.html">Shop</a></li>
-        <li><a href="index.html#ritual">Ritual</a></li>
-        <li><a href="about.html">Our Story</a></li>
+        <li><a href="shop.html" data-i18n="nav.shop">Shop</a></li>
+        <li><a href="index.html#ritual" data-i18n="nav.ritual">Ritual</a></li>
+        <li><a href="about.html" data-i18n="nav.story">Our Story</a></li>
       </ul>
-      <a class="brand" href="index.html">Viodelith<small>Korean Skincare</small></a>
+      <a class="brand" href="index.html">Viodelith<small data-i18n="brand.tagline">Korean Skincare</small></a>
       <ul class="nav__links nav__links--right">
-        <li><a href="index.html#journal">Journal</a></li>
-        <li><a href="#" data-cart-open>Bag<span class="cart-count" data-cart-count style="display:none">0</span></a></li>
+        <li><a href="index.html#journal" data-i18n="nav.journal">Journal</a></li>
+        <li><a href="#" data-cart-open><span data-i18n="nav.bag">Bag</span><span class="cart-count" data-cart-count style="display:none">0</span></a></li>
       </ul>
     </nav>
   </header>
@@ -33,11 +50,11 @@
   <!-- Mobile menu -->
   <div class="mobile-menu">
     <ul>
-      <li><a href="shop.html">Shop</a></li>
-      <li><a href="index.html#ritual">Ritual</a></li>
-      <li><a href="about.html">Our Story</a></li>
-      <li><a href="index.html#journal">Journal</a></li>
-      <li><a href="#" data-cart-open>Bag</a></li>
+      <li><a href="shop.html" data-i18n="nav.shop">Shop</a></li>
+      <li><a href="index.html#ritual" data-i18n="nav.ritual">Ritual</a></li>
+      <li><a href="about.html" data-i18n="nav.story">Our Story</a></li>
+      <li><a href="index.html#journal" data-i18n="nav.journal">Journal</a></li>
+      <li><a href="#" data-cart-open data-i18n="nav.bag">Bag</a></li>
     </ul>
   </div>
 
@@ -46,25 +63,22 @@
     <section class="hero">
       <div class="hero__inner wrap">
         <div class="hero__copy">
-          <span class="eyebrow">Seoul · Considered Skincare</span>
-          <h1 class="hero__title">Skin, kept<br /><em>quietly</em> luminous.</h1>
-          <p class="hero__lede">A curated house of Korean skincare built barrier-first — gentle actives, clean formulations, and rituals that let your skin do the glowing.</p>
+          <span class="eyebrow" data-i18n="hero.eyebrow">Seoul · Considered Skincare</span>
+          <h1 class="hero__title" data-i18n-html="hero.title">Skin, kept<br /><em>quietly</em> luminous.</h1>
+          <p class="hero__lede" data-i18n="hero.lede">A curated house of Korean skincare built barrier-first — gentle actives, clean formulations, and rituals that let your skin do the glowing.</p>
           <div class="hero__actions">
-            <a href="shop.html" class="btn">Shop the Edit</a>
-            <a href="index.html#ritual" class="link-underline">Discover the Ritual</a>
+            <a href="shop.html" class="btn" data-i18n="hero.shop">Shop the Edit</a>
+            <a href="index.html#ritual" class="link-underline" data-i18n="hero.discover">Discover the Ritual</a>
           </div>
         </div>
         <div class="hero__art" data-bottle="amber"></div>
       </div>
-      <div class="hero__scroll">Scroll</div>
+      <div class="hero__scroll" data-i18n="hero.scroll">Scroll</div>
     </section>
 
     <!-- Ticker -->
     <div class="ticker" aria-hidden="true">
-      <div class="ticker__track">
-        <span>Snail Mucin</span><span>Centella Asiatica</span><span>Fermented Rice</span><span>Propolis</span><span>Ginseng</span><span>Ceramides</span>
-        <span>Snail Mucin</span><span>Centella Asiatica</span><span>Fermented Rice</span><span>Propolis</span><span>Ginseng</span><span>Ceramides</span>
-      </div>
+      <div class="ticker__track" data-ticker></div>
     </div>
 
     <!-- Featured products -->
@@ -72,10 +86,10 @@
       <div class="wrap">
         <div class="section__head reveal">
           <div>
-            <span class="eyebrow">The Edit</span>
-            <h2>Quietly effective<br />everyday essentials.</h2>
+            <span class="eyebrow" data-i18n="edit.eyebrow">The Edit</span>
+            <h2 data-i18n-html="edit.title">Quietly effective<br />everyday essentials.</h2>
           </div>
-          <a href="shop.html" class="link-underline">View all products</a>
+          <a href="shop.html" class="link-underline" data-i18n="edit.viewall">View all products</a>
         </div>
         <div class="grid-products" id="featured-grid"></div>
       </div>
@@ -86,11 +100,11 @@
       <div class="wrap split">
         <div class="split__media reveal" data-leaf></div>
         <div class="split__copy reveal">
-          <span class="eyebrow">Our Philosophy</span>
-          <h2>Barrier-first, always.</h2>
-          <p>Great skin isn't forced — it's supported. Every Viodelith formula begins with the moisture barrier: the quiet layer that keeps skin calm, resilient, and glowing without irritation.</p>
-          <p>We pair time-honoured Korean botanicals with modern, gentle actives — no harsh strips, no noise. Just skin that feels like itself again.</p>
-          <a href="about.html" class="btn btn--ghost">Read our story</a>
+          <span class="eyebrow" data-i18n="phil.eyebrow">Our Philosophy</span>
+          <h2 data-i18n="phil.title">Barrier-first, always.</h2>
+          <p data-i18n="phil.p1">Great skin isn't forced — it's supported. Every Viodelith formula begins with the moisture barrier: the quiet layer that keeps skin calm, resilient, and glowing without irritation.</p>
+          <p data-i18n="phil.p2">We pair time-honoured Korean botanicals with modern, gentle actives — no harsh strips, no noise. Just skin that feels like itself again.</p>
+          <a href="about.html" class="btn btn--ghost" data-i18n="phil.cta">Read our story</a>
         </div>
       </div>
     </section>
@@ -100,15 +114,15 @@
       <div class="wrap">
         <div class="section__head reveal">
           <div>
-            <span class="eyebrow">The Ritual</span>
-            <h2>Four steps to glass skin.</h2>
+            <span class="eyebrow" data-i18n="ritual.eyebrow">The Ritual</span>
+            <h2 data-i18n="ritual.title">Four steps to glass skin.</h2>
           </div>
         </div>
         <div class="steps">
-          <div class="step reveal"><div class="step__num">01</div><h3>Cleanse</h3><p>A low-pH milk cleanser lifts the day without disturbing the barrier.</p></div>
-          <div class="step reveal"><div class="step__num">02</div><h3>Tone</h3><p>Fermented essence-toners prep skin to drink in everything that follows.</p></div>
-          <div class="step reveal"><div class="step__num">03</div><h3>Treat</h3><p>Targeted serums and essences bring hydration, clarity, and glow.</p></div>
-          <div class="step reveal"><div class="step__num">04</div><h3>Seal</h3><p>Cica creams and SPF lock it in and defend through the day.</p></div>
+          <div class="step reveal"><div class="step__num">01</div><h3 data-i18n="step1.title">Cleanse</h3><p data-i18n="step1.desc">A low-pH milk cleanser lifts the day without disturbing the barrier.</p></div>
+          <div class="step reveal"><div class="step__num">02</div><h3 data-i18n="step2.title">Tone</h3><p data-i18n="step2.desc">Fermented essence-toners prep skin to drink in everything that follows.</p></div>
+          <div class="step reveal"><div class="step__num">03</div><h3 data-i18n="step3.title">Treat</h3><p data-i18n="step3.desc">Targeted serums and essences bring hydration, clarity, and glow.</p></div>
+          <div class="step reveal"><div class="step__num">04</div><h3 data-i18n="step4.title">Seal</h3><p data-i18n="step4.desc">Cica creams and SPF lock it in and defend through the day.</p></div>
         </div>
       </div>
     </section>
@@ -117,12 +131,12 @@
     <section class="section band">
       <div class="wrap">
         <div class="section__head reveal" style="margin-bottom:2.6rem;">
-          <div><span class="eyebrow" style="color:var(--stone)">Why Viodelith</span></div>
+          <div><span class="eyebrow" style="color:var(--stone)" data-i18n="values.eyebrow">Why Viodelith</span></div>
         </div>
         <div class="values">
-          <div class="value reveal"><span class="mark">✧</span><h3>Clean by design</h3><p>Free from parabens, sulphates, and synthetic fragrance. Formulated for even the most reactive skin.</p></div>
-          <div class="value reveal"><span class="mark">✧</span><h3>Sourced in Korea</h3><p>Made with heritage botanicals and produced with the labs that pioneered modern K-beauty.</p></div>
-          <div class="value reveal"><span class="mark">✧</span><h3>Cruelty-free</h3><p>Never tested on animals. Recyclable glass and refill-ready design across the range.</p></div>
+          <div class="value reveal"><span class="mark">✧</span><h3 data-i18n="val1.title">Clean by design</h3><p data-i18n="val1.desc">Free from parabens, sulphates, and synthetic fragrance. Formulated for even the most reactive skin.</p></div>
+          <div class="value reveal"><span class="mark">✧</span><h3 data-i18n="val2.title">Sourced in Korea</h3><p data-i18n="val2.desc">Made with heritage botanicals and produced with the labs that pioneered modern K-beauty.</p></div>
+          <div class="value reveal"><span class="mark">✧</span><h3 data-i18n="val3.title">Cruelty-free</h3><p data-i18n="val3.desc">Never tested on animals. Recyclable glass and refill-ready design across the range.</p></div>
         </div>
       </div>
     </section>
@@ -132,11 +146,11 @@
       <div class="wrap split split--reverse">
         <div class="split__media reveal" data-leaf style="background:linear-gradient(150deg,var(--paper-2),var(--sand));"></div>
         <div class="split__copy reveal">
-          <span class="eyebrow">The Journal</span>
-          <h2>Glass skin, decoded.</h2>
-          <p>From the ten-step ritual to the science of the skin barrier, our journal translates K-beauty into a practice you'll actually keep.</p>
-          <p>Learn how to layer, when to exfoliate, and why less is so often more.</p>
-          <a href="#" class="link-underline">Read the Journal</a>
+          <span class="eyebrow" data-i18n="journal.eyebrow">The Journal</span>
+          <h2 data-i18n="journal.title">Glass skin, decoded.</h2>
+          <p data-i18n="journal.p1">From the ten-step ritual to the science of the skin barrier, our journal translates K-beauty into a practice you'll actually keep.</p>
+          <p data-i18n="journal.p2">Learn how to layer, when to exfoliate, and why less is so often more.</p>
+          <a href="#" class="link-underline" data-i18n="journal.cta">Read the Journal</a>
         </div>
       </div>
     </section>
@@ -144,14 +158,14 @@
     <!-- Newsletter -->
     <section class="section band">
       <div class="wrap newsletter">
-        <span class="eyebrow reveal" style="color:var(--stone)">Join the House</span>
-        <h2 class="reveal" style="color:var(--paper); margin-top:1rem;">Ten percent off your first ritual.</h2>
-        <p class="reveal" style="color:#d8d1c4;">Subscribe for early access to new arrivals, quiet restocks, and skincare notes from Seoul.</p>
+        <span class="eyebrow reveal" style="color:var(--stone)" data-i18n="news.eyebrow">Join the House</span>
+        <h2 class="reveal" style="color:var(--paper); margin-top:1rem;" data-i18n="news.title">Ten percent off your first ritual.</h2>
+        <p class="reveal" style="color:#d8d1c4;" data-i18n="news.p">Subscribe for early access to new arrivals, quiet restocks, and skincare notes from Seoul.</p>
         <form class="newsletter__form reveal" style="border-color:var(--stone);">
-          <input type="email" placeholder="Your email address" aria-label="Email address" required style="color:var(--paper);" />
-          <button type="submit" style="color:var(--paper);">Subscribe</button>
+          <input type="email" placeholder="Your email address" aria-label="Email address" data-i18n-ph="news.placeholder" data-i18n-aria="news.placeholder" required style="color:var(--paper);" />
+          <button type="submit" style="color:var(--paper);" data-i18n="news.subscribe">Subscribe</button>
         </form>
-        <p class="newsletter__note reveal" style="color:var(--clay);">No noise. Unsubscribe anytime.</p>
+        <p class="newsletter__note reveal" style="color:var(--clay);" data-i18n="news.note">No noise. Unsubscribe anytime.</p>
       </div>
     </section>
   </main>
@@ -161,22 +175,23 @@
     <div class="wrap">
       <div class="footer__grid">
         <div class="footer__brand">
-          <a class="brand" href="index.html" style="text-align:left;">Viodelith<small>Korean Skincare</small></a>
-          <p>Considered Korean skincare for a calm, luminous complexion. Formulated gently, made to be kept.</p>
+          <a class="brand" href="index.html" style="text-align:left;">Viodelith<small data-i18n="brand.tagline">Korean Skincare</small></a>
+          <p data-i18n="footer.tagline">Considered Korean skincare for a calm, luminous complexion. Formulated gently, made to be kept.</p>
         </div>
-        <div class="footer__col"><h4>Shop</h4><ul><li><a href="shop.html">All Products</a></li><li><a href="shop.html">Cleansers</a></li><li><a href="shop.html">Serums</a></li><li><a href="shop.html">Sun Care</a></li></ul></div>
-        <div class="footer__col"><h4>House</h4><ul><li><a href="about.html">Our Story</a></li><li><a href="index.html#ritual">The Ritual</a></li><li><a href="index.html#journal">Journal</a></li><li><a href="#">Ingredients</a></li></ul></div>
-        <div class="footer__col"><h4>Care</h4><ul><li><a href="#">Contact</a></li><li><a href="#">Shipping</a></li><li><a href="#">Returns</a></li><li><a href="#">FAQ</a></li></ul></div>
+        <div class="footer__col"><h4 data-i18n="footer.shop">Shop</h4><ul><li><a href="shop.html" data-i18n="footer.allproducts">All Products</a></li><li><a href="shop.html" data-i18n="footer.cleansers">Cleansers</a></li><li><a href="shop.html" data-i18n="footer.serums">Serums</a></li><li><a href="shop.html" data-i18n="footer.suncare">Sun Care</a></li></ul></div>
+        <div class="footer__col"><h4 data-i18n="footer.house">House</h4><ul><li><a href="about.html" data-i18n="nav.story">Our Story</a></li><li><a href="index.html#ritual" data-i18n="ritual.eyebrow">The Ritual</a></li><li><a href="index.html#journal" data-i18n="nav.journal">Journal</a></li><li><a href="#" data-i18n="footer.ingredients">Ingredients</a></li></ul></div>
+        <div class="footer__col"><h4 data-i18n="footer.care">Care</h4><ul><li><a href="#" data-i18n="footer.contact">Contact</a></li><li><a href="#" data-i18n="footer.shipping">Shipping</a></li><li><a href="#" data-i18n="footer.returns">Returns</a></li><li><a href="#" data-i18n="footer.faq">FAQ</a></li></ul></div>
       </div>
       <div class="footer__bottom">
-        <span>© <span id="year">2026</span> Viodelith Skincare. All rights reserved.</span>
-        <span>Seoul · London · Worldwide shipping</span>
+        <span>© <span id="year">2026</span> Viodelith Skincare. <span data-i18n="footer.rights">All rights reserved.</span></span>
+        <span data-i18n="footer.locations">Ships to the U.S. &amp; Honduras</span>
       </div>
     </div>
   </footer>
 
   <script src="config.js"></script>
   <script src="commerce.js"></script>
+  <script src="i18n.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
