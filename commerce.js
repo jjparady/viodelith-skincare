@@ -52,13 +52,23 @@
 
   const MOCK_CART_KEY = "viodelith_cart";
 
+  // Normalize a CMS-supplied image path. The CMS may store "/uploads/x.png"
+  // (leading slash); under the GitHub Pages project subpath that would drop
+  // the project folder, so make it relative to the page instead. Full URLs
+  // (a future CDN) pass through untouched.
+  function normImage(v) {
+    if (!v) return null;
+    if (/^https?:\/\//i.test(v)) return v;
+    return v.replace(/^\/+/, "");
+  }
+
   // Map an entry from data/products.json into the normalized product shape.
   function fromJSON(r) {
     const qty = (typeof r.quantity === "number") ? r.quantity : 0;
     return {
       id: r.id, handle: r.handle || r.id, title: r.title_en || r.title || "",
       category: r.category || "Skincare", price: Number(r.price) || 0, currencyCode: CURRENCY,
-      tag: r.tag || null, tone: r.tone || "cream", image: r.image || null,
+      tag: r.tag || null, tone: r.tone || "cream", image: normImage(r.image),
       description: r.description_en || r.description || "",
       i18n: { es: { title: r.title_es || "", description: r.description_es || "" } },
       quantity: qty, available: qty > 0, variantId: r.id,

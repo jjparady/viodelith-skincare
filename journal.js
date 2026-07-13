@@ -26,9 +26,17 @@
 
   let ARTICLES = FALLBACK;
 
+  // Make a CMS image path work under the GitHub Pages project subpath:
+  // strip a leading slash so it's relative to the page (full URLs pass through).
+  function normImage(v) {
+    if (!v) return "";
+    if (/^https?:\/\//i.test(v)) return v;
+    return v.replace(/^\/+/, "");
+  }
+
   function normalize(r) {
     return {
-      slug: r.slug, date: r.date, readMins: r.readMins || 3, tone: r.tone || "cream", image: r.image || "",
+      slug: r.slug, date: r.date, readMins: r.readMins || 3, tone: r.tone || "cream", image: normImage(r.image),
       title:   { en: r.title_en   || "", es: r.title_es   || r.title_en   || "" },
       excerpt: { en: r.excerpt_en || "", es: r.excerpt_es || r.excerpt_en || "" },
       body:    { en: r.body_en    || "", es: r.body_es    || r.body_en    || "" },
