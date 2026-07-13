@@ -159,6 +159,16 @@
     "err.update": { en: "Couldn't update bag", es: "No se pudo actualizar la bolsa" },
     "menu": { en: "Menu", es: "Menú" },
     "filter.all": { en: "All", es: "Todos" },
+
+    // Journal
+    "journalpage.eyebrow": { en: "The Journal", es: "El Diario" },
+    "journalpage.title": { en: "Notes on the ritual.", es: "Notas sobre el ritual." },
+    "journalpage.intro": { en: "Glass skin, decoded — from barrier science to the art of layering. Practical K-beauty you'll actually keep.", es: "La piel de cristal, descifrada — de la ciencia de la barrera al arte de superponer. K-beauty práctica que de verdad mantendrás." },
+    "journal.minread": { en: "min read", es: "min de lectura" },
+    "journal.readmore": { en: "Read", es: "Leer" },
+    "journal.back": { en: "Back to the Journal", es: "Volver al Diario" },
+    "journal.notfound": { en: "Article not found.", es: "Artículo no encontrado." },
+    "journal.more": { en: "Keep reading", es: "Seguir leyendo" },
   };
 
   const CATS = {

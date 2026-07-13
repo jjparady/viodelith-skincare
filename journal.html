@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shop — Viodelith Skincare</title>
-  <meta name="description" content="Shop Viodelith Skincare — barrier-first Korean cleansers, essences, serums, and sun care." />
+  <title>Journal — Viodelith Skincare</title>
+  <meta name="description" content="The Viodelith Journal — glass skin decoded, barrier science, and the art of layering. Practical K-beauty notes." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -59,25 +59,28 @@
   <main>
     <section class="page-hero">
       <div class="wrap">
-        <span class="eyebrow" data-i18n="shop.eyebrow">The Full Edit</span>
-        <h1 data-i18n="shop.title">Shop the Ritual</h1>
-        <p data-i18n="shop.intro">Every formula is barrier-first, gently active, and made to be kept. Filter by step to build your routine.</p>
+        <span class="eyebrow" data-i18n="journalpage.eyebrow">The Journal</span>
+        <h1 data-i18n="journalpage.title">Notes on the ritual.</h1>
+        <p data-i18n="journalpage.intro">Glass skin, decoded — from barrier science to the art of layering. Practical K-beauty you'll actually keep.</p>
       </div>
     </section>
 
     <section class="section">
       <div class="wrap">
-        <div class="filters" id="filters"></div>
-        <div class="grid-products" id="shop-grid"></div>
+        <div class="journal-grid" id="journal-grid"></div>
       </div>
     </section>
 
     <section class="section band">
       <div class="wrap newsletter">
-        <span class="eyebrow" style="color:var(--stone)" data-i18n="shopcta.eyebrow">Not sure where to start?</span>
-        <h2 style="color:var(--paper); margin-top:1rem;" data-i18n="shopcta.title">Build your ritual with us.</h2>
-        <p style="color:#d8d1c4;" data-i18n="shopcta.p">Tell us your skin type and we'll compose a routine — barrier-first, always.</p>
-        <a href="about.html" class="btn btn--ghost" style="border-color:var(--stone); color:var(--paper); margin-top:1rem;" data-i18n="shopcta.button">Take the skin quiz</a>
+        <span class="eyebrow" style="color:var(--stone)" data-i18n="news.eyebrow">Join the House</span>
+        <h2 style="color:var(--paper); margin-top:1rem;" data-i18n="news.title">Ten percent off your first ritual.</h2>
+        <p style="color:#d8d1c4;" data-i18n="news.p">Subscribe for early access to new arrivals, quiet restocks, and skincare notes from Seoul.</p>
+        <form class="newsletter__form" style="border-color:var(--stone);">
+          <input type="email" placeholder="Your email address" aria-label="Email address" data-i18n-ph="news.placeholder" data-i18n-aria="news.placeholder" required style="color:var(--paper);" />
+          <button type="submit" style="color:var(--paper);" data-i18n="news.subscribe">Subscribe</button>
+        </form>
+        <p class="newsletter__note" style="color:var(--clay);" data-i18n="news.note">No noise. Unsubscribe anytime.</p>
       </div>
     </section>
   </main>
@@ -104,5 +107,6 @@
   <script src="commerce.js"></script>
   <script src="i18n.js"></script>
   <script src="script.js"></script>
+  <script src="journal.js"></script>
 </body>
 </html>

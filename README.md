@@ -15,12 +15,23 @@ considered Korean skincare. Built as a fast, dependency-free static site.
 index.html    Home — hero, featured edit, philosophy, ritual, values, journal, newsletter
 shop.html     Shop — filterable product grid
 about.html    Our Story — brand narrative + promise
+journal.html  Journal — listing of articles
+article.html  Journal — single article, rendered from ?slug=
 styles.css    All styles (single stylesheet, CSS custom properties)
 config.js     Store configuration — the one file you edit to go live (see below)
 commerce.js   Commerce adapter — mock + Shopify providers behind one API
 i18n.js       Localization — EN/ES dictionary, USD/HNL currency (window.L10n)
+journal.js    Journal — bilingual article data + list/article rendering
 script.js     UI — product rendering, cart drawer, filters, reveals, mobile menu
 ```
+
+## Journal
+
+A static, data-driven blog. Articles live as bilingual data in `journal.js`;
+`journal.html` renders the list and `article.html` renders a single post from a
+`?slug=` query. To add an article, append one entry to the `ARTICLES` array —
+no new files needed. Localizes and re-renders through `window.L10n` like the
+rest of the site.
 
 ## Language & currency
 
